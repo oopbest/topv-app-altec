@@ -7,7 +7,7 @@ interface Props {
 
 const SocialButton: React.FC<Props> = ({ styleColor }) => {
   return (
-    <ul className="flex justify-center space-x-2 px-6">
+    <ul className="flex justify-center space-x-2 px-3">
       {socialData.map((social, index) => (
         <li key={index}>
           <a href={social.path} target="_blank">

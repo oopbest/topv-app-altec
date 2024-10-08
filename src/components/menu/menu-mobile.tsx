@@ -27,7 +27,7 @@ export default function MenuMobile({ toggleMenu, isOpenMenu }: Props) {
         </div>
 
         <div className="container mx-auto flex h-[90%] flex-col justify-between">
-          <ul className="flex flex-col space-y-5 px-6 text-primary *:border-b">
+          <ul className="flex flex-col space-y-5 px-6 text-primary">
             <MunuList />
           </ul>
 

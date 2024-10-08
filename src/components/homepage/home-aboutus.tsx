@@ -12,11 +12,11 @@ export default function HomeAboutUs() {
     <>
       {/* <!-- Contact us--> */}
       <div className="transition-responsive container mx-auto px-4">
-        <div className="flex flex-wrap justify-center gap-3 space-x-4 p-5">
+        <div className="flex flex-wrap justify-center p-5">
           <div className="flex items-center divide-x *:px-2">
-            <h4 className="font-semibold text-primary">ติดตามเรา</h4>
+            <h4 className="font-light text-primary">ติดตามเรา</h4>
 
-            <Image className="size-24" src={imgLogo} alt="logo-alectric" />
+            <Image className="w-20 h-14" src={imgLogo} alt="logo-alectric" />
           </div>
           <div className="content-center space-x-2">
             <SocialButton styleColor="btn-dark" />

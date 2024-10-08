@@ -33,7 +33,7 @@
     @apply transition-responsive rounded-full border-2 border-primary bg-primary px-3 py-2 text-sm text-white;
   }
   .btn-social {
-    @apply transition-responsive size-14 rounded-full shadow-md hover:ring-4 ;
+    @apply transition-responsive size-12 rounded-full shadow-md hover:ring-4 ;
   }
 
   .btn-dark {

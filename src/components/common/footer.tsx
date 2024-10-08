@@ -4,6 +4,12 @@ import { faClock, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+import imgTopv from "@images/site-topvalue.svg"
+import imgShopee from "@images/site-shopee.svg"
+import imgLazada from "@images/site-lazada.svg"
+import imgJd from "@images/site-jd.svg"
+import imgLogoFooter from "@images/altec-logo-footer.svg"
 
 export default function Footer() {
   const pathname = usePathname();
@@ -120,32 +126,32 @@ export default function Footer() {
             >
               <ul className="p-3 md:p-0">
                 <li className="flex">
-                  <img
-                    src="/images/site-topvalue.svg"
+                  <Image
+                    src={imgTopv}
                     alt="Topvalue"
                     className="me-3 ms-2 w-5"
                   />
                   <a href="#">Topvalue</a>
                 </li>
                 <li className="flex">
-                  <img
-                    src="/images/site-shopee.svg"
+                  <Image
+                    src={imgShopee}
                     alt="Shopee"
                     className="me-2"
                   />
                   <a href="#">Shopee</a>
                 </li>
                 <li className="flex">
-                  <img
-                    src="/images/site-lazada.svg"
+                  <Image
+                    src={imgLazada}
                     alt="Lazada"
                     className="me-2"
                   />
                   <a href="#">Lazada</a>
                 </li>
                 <li className="flex">
-                  <img
-                    src="/images/site-jd.svg"
+                  <Image
+                    src={imgJd}
                     alt="JD Central"
                     className="me-2"
                   />
@@ -159,10 +165,10 @@ export default function Footer() {
         {/* <!-- Copyright --> */}
         <div className="flex flex-wrap pt-4 container mx-auto  border-0 leading-10 relative md:border-t md:mt-10">
           <div className="w-full content-center lg:w-1/5">
-            <img
+            <Image
               className="mx-auto lg:mx-0 text-white"
-              src="/images/altec-logo-footer.svg"
-              alt="swf"
+              src={imgLogoFooter}
+              alt="altec-logo"
             />
           </div>
           <div className="flex-1 text-center pt-3 lg:pt-0">

@@ -15,10 +15,9 @@ export default function HomeAboutUs() {
         <div className="flex flex-wrap justify-center p-5">
           <div className="flex items-center divide-x *:px-2">
             <h4 className="font-light text-primary">ติดตามเรา</h4>
-
-            <Image className="w-20 h-14" src={imgLogo} alt="logo-alectric" />
+            <Image className="w-20 h-8" src={imgLogo} alt="logo-alectric" />
           </div>
-          <div className="content-center space-x-2">
+          <div className="content-center space-x-2 pt-3 sm:pt-0">
             <SocialButton styleColor="btn-dark" />
           </div>
         </div>

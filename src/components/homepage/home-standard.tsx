@@ -10,7 +10,7 @@ export default function HomeStandard() {
       <div className="bg-blue-50 p-4">
         <div className="transition-responsive container mx-auto text-center">
           <h1 className="text-primary">มาตรฐานของเรา</h1>
-          <div className="grid grid-cols-1 gap-5 py-5 *:space-y-4 *:rounded-3xl *:bg-white *:p-12 lg:grid-cols-3 [&_img]:mx-auto [&_img]:object-cover [&_p]:text-gray-500">
+          <div className="grid grid-cols-1 gap-5 py-5 *:space-y-4 *:rounded-3xl *:bg-white *:p-12 md:grid-cols-3 [&_img]:mx-auto [&_img]:object-cover [&_p]:text-gray-500">
             <div>
               <Image src={iconDummy1} alt="standard1" />
               <div className="space-y-2">

@@ -29,8 +29,10 @@ export default function Header() {
 
   return (
     <>
-      <nav className="sticky top-0 z-10 w-full border-b bg-white py-4">
-        <section className="transition-responsive container mx-auto flex items-center justify-between space-x-2 px-4 xl:px-0">
+      <nav className="sticky top-0 z-10 w-full shadow-lg bg-white py-4">
+        <section className="transition-responsive container mx-auto flex justify-between space-x-2 px-4 xl:px-0">
+          <div className="flex items-center">
+
           {/* <!-- Icon hamberger --> */}
           <button
             id="hamburger-button"
@@ -41,10 +43,11 @@ export default function Header() {
           </button>
 
           {/* <!-- Logo  --> */}
-          <div className="w-3/4 lg:w-auto">
+          <div>
             <a href="/" title="">
               <Image src={logo} alt="logo" />
             </a>
+          </div>
           </div>
 
           {/* <!--  Links - desktop  --> */}
@@ -54,7 +57,7 @@ export default function Header() {
             </ul>
           </div>
 
-          <div className="lg:w-auto lg:basis-1/5" onClick={toggleSearch}>
+          <div className="w-[75%] lg:w-auto lg:basis-1/5" onClick={toggleSearch}>
             <div
               className="flex justify-center overflow-hidden rounded-lg border border-gray-300 duration-500 hover:border-primary focus:border-primary"
               tabIndex={0}
@@ -63,7 +66,7 @@ export default function Header() {
                 {/* <!-- Search Icon --> */}
                 <FontAwesomeIcon icon={faSearch} />
               </span>
-              <div className="w-40 flex-1 border-none px-1 py-2 text-sm outline-none hover:cursor-text focus:ring-0">
+              <div className="w-full flex-1 border-none px-1 py-2 text-sm outline-none hover:cursor-text focus:ring-0">
                 <p className="text-gray-400">ค้นหาสินค้า...</p>
               </div>
             </div>

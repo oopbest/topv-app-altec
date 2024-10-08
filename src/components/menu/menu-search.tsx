@@ -5,6 +5,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { ProductDto } from "@/interface/dto/product.dto";
+import { FormatThaiBaht } from "../utils/format-currency";
 
 type Props = {
   toggleSearch: () => void;
@@ -66,7 +67,7 @@ export default function SearchSearch({ toggleSearch, isOpenSearch }: Props) {
   return (
     <>
       <div
-        className={`fixed inset-y-0 right-0 w-full -translate-x-full transform bg-white shadow-lg transition-transform duration-300 ease-in-out md:w-1/2 lg:w-1/3 ${
+        className={`fixed inset-y-0 right-0 w-full -translate-x-full transform bg-white shadow-lg transition-transform duration-300 ease-in-out lg:w-1/3 ${
           isOpenSearch ? "translate-x-0" : "translate-x-full"
         } `}
       >
@@ -155,7 +156,7 @@ export default function SearchSearch({ toggleSearch, isOpenSearch }: Props) {
                               />
                               <div>
                                 <p className="line-clamp-1">{product.name}</p>
-                                <small>฿ {product.price}</small>
+                                <small><FormatThaiBaht amount={product.price}/></small>
                               </div>
                             </Link>
                           </li>

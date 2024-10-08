@@ -2,11 +2,16 @@ import LoadingProductInfo from "./loading";
 import { Suspense } from "react";
 import { fetchProductDetail } from "../../api/fetch";
 import ProductRating from "@/components/products/product-rating";
+import { FormatThaiBaht } from "@/components/utils/format-currency";
+import Image from "next/image";
+import imgTopv from "@images/shop-topvalue.svg";
+import imgShopee from "@images/shop-shopee.svg";
+import imgLazada from "@images/shop-lazada.svg"
+import imgJd from "@images/shop-jd.svg";
 
 type Props = {
   params: { productId: string };
 };
-
 
 export default async function Info({ params }: Props) {
   await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -35,7 +40,7 @@ export default async function Info({ params }: Props) {
         {/* !-- Price --> */}
         <div>
           <h3 className="rounded-lg bg-slate-100 py-[10%] text-center text-primary">
-            {product.price} <small>฿</small>
+          <FormatThaiBaht amount={product.price} />
           </h3>
         </div>
 
@@ -48,9 +53,9 @@ export default async function Info({ params }: Props) {
               href="https://topvalue.com/brands/altec"
               target="_blank"
             >
-              <img
+              <Image
                 className="rounded-lg border bg-white"
-                src="/images/shop-topvalue.svg"
+                src={imgTopv}
                 alt="shop-topvalue"
               />
             </a>
@@ -59,9 +64,9 @@ export default async function Info({ params }: Props) {
               href="https://shopee.co.th/altec_officialth"
               target="_blank"
             >
-              <img
+              <Image
                 className="rounded-lg border bg-white"
-                src="/images/shop-shopee.svg"
+                src={imgShopee}
                 alt="shop-shopee"
               />
             </a>
@@ -69,16 +74,16 @@ export default async function Info({ params }: Props) {
               className="transition hover:-translate-y-1"
               href="https://www.lazada.co.th/shop/alectric-officialstore/"
             >
-              <img
+              <Image
                 className="rounded-lg border bg-white"
-                src="/images/shop-lazada.svg"
+                src={imgLazada}
                 alt="shop-topvalue"
               />
             </a>
             <a className="transition hover:-translate-y-1" href="#">
-              <img
+              <Image
                 className="rounded-lg border bg-white"
-                src="/images/shop-jd.svg"
+                src={imgJd}
                 alt="shop-topvalue"
               />
             </a>

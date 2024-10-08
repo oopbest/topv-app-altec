@@ -4,6 +4,7 @@ import Image from "next/image";
 import ProductRating from "./product-rating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { FormatThaiBaht } from "../utils/format-currency";
 
 type Props = {
   product: ProductDto;
@@ -28,7 +29,7 @@ export default function ProductCard({ product }: Props) {
 
         <div className="my-3 space-y-2 px-2 md:space-y-3 md:px-6">
           <p className="line-clamp-2 px-2 h-12">{product.name}</p>
-          <b>฿ {product.price}</b>
+          <b><FormatThaiBaht amount={product.price} /></b>
           <div className="flex justify-center space-x-1">
             <ProductRating rating={product.rating} />
 

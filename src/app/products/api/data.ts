@@ -29,7 +29,7 @@ export const products = [
   },
   {
     id: 2,
-    name: "Smart LED TV 55-inch",
+    name: "Smart LED TV 55-inch Wireless",
     sku: "12000002",
     price: 1599.99,
     stock: 10,
@@ -126,7 +126,7 @@ export const products = [
   },
   {
     id: 6,
-    name: "Electric Toothbrush",
+    name: "Electric Toothbrush Wireless",
     sku: "12000006",
     price: 49.99,
     stock: 75,
@@ -149,7 +149,7 @@ export const products = [
   },
   {
     id: 7,
-    name: "Yoga Mat with Carrying Strap",
+    name: "Yoga Mat Wireless with Carrying Strap",
     sku: "12000007",
     price: 24.99,
     stock: 40,

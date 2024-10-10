@@ -22,7 +22,7 @@ export default function ProductCard({ product }: Props) {
             width={500}
             height={500}
             className="rounded-t-xl object-cover"
-            src={product.image[0]}
+            src={product.image[0].path}
             alt={product.name}
           />
         </Link>

@@ -4,7 +4,10 @@ export interface ProductDto {
   sku: string;
   price: number;
   stock: number;
-  image: string[];
+  image: {
+    id: number;
+    path: string;
+  }[];
   short_description: string;
   rating: number;
   tags: string[];

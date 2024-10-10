@@ -14,7 +14,7 @@ export const generateMetadata = async ({
     }, 100);
   });
   return {
-    title: `Detail ${title}`,
+    title: `${title}`,
   };
 };
 

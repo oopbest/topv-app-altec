@@ -6,12 +6,26 @@ export const products = [
     price: 99.99,
     stock: 25,
     image: [
-      "https://picsum.photos/id/101/700/700",
-      "https://picsum.photos/id/102/700/700",
-      "https://picsum.photos/id/103/700/700",
-      "https://picsum.photos/id/104/700/700",
-      "https://picsum.photos/id/107/700/700",
-      "https://picsum.photos/id/106/700/700",
+      {
+        id: 1,
+        path: "https://picsum.photos/id/101/700/700",
+      },
+      {
+        id: 2,
+        path: "https://picsum.photos/id/102/700/700",
+      },
+      {
+        id: 3,
+        path: "https://picsum.photos/id/103/700/700",
+      },
+      {
+        id: 4,
+        path: "https://picsum.photos/id/104/700/700",
+      },
+      {
+        id: 5,
+        path: "https://picsum.photos/id/106/700/700",
+      },
     ],
     short_description:
       "High-quality wireless headphones with noise cancellation and long battery life.",
@@ -34,10 +48,22 @@ export const products = [
     price: 1599.99,
     stock: 10,
     image: [
-      "https://picsum.photos/id/201/700/700",
-      "https://picsum.photos/id/202/700/700",
-      "https://picsum.photos/id/203/700/700",
-      "https://picsum.photos/id/204/700/700",
+      {
+        id: 1,
+        path: "https://picsum.photos/id/201/700/700",
+      },
+      {
+        id: 2,
+        path: "https://picsum.photos/id/202/700/700",
+      },
+      {
+        id: 3,
+        path: "https://picsum.photos/id/203/700/700",
+      },
+      {
+        id: 4,
+        path: "https://picsum.photos/id/204/700/700",
+      },
     ],
     short_description:
       "55-inch Smart LED TV with 4K UHD resolution and built-in streaming apps.",
@@ -60,8 +86,14 @@ export const products = [
     price: 129.99,
     stock: 50,
     image: [
-      "https://picsum.photos/id/301/700/700",
-      "https://picsum.photos/id/302/700/700",
+      {
+        id: 1,
+        path: "https://picsum.photos/id/301/700/700",
+      },
+      {
+        id: 2,
+        path: "https://picsum.photos/id/302/700/700",
+      },
     ],
     short_description:
       "Comfortable ergonomic office chair with adjustable height and lumbar support.",
@@ -84,7 +116,10 @@ export const products = [
     price: 19.99,
     stock: 100,
     image: [
-      "https://picsum.photos/id/401/700/700",
+      {
+        id: 1,
+        path: "https://picsum.photos/id/401/700/700",
+      },
     ],
     short_description:
       "Keeps beverages hot or cold for hours, ideal for travel and outdoor activities.",
@@ -107,8 +142,14 @@ export const products = [
     price: 1299.99,
     stock: 5,
     image: [
-      "https://picsum.photos/id/501/700/700",
-      "https://picsum.photos/id/502/700/700",
+      {
+        id: 1,
+        path: "https://picsum.photos/id/501/700/700",
+      },
+      {
+        id: 2,
+        path: "https://picsum.photos/id/501/700/700",
+      },
     ],
     short_description:
       "High-performance gaming laptop with NVIDIA graphics and Intel i7 processor.",
@@ -131,7 +172,10 @@ export const products = [
     price: 49.99,
     stock: 75,
     image: [
-      "https://picsum.photos/id/121/700/700",
+      {
+        id: 1,
+        path: "https://picsum.photos/id/121/700/700",
+      },
     ],
     short_description:
       "Rechargeable electric toothbrush with multiple cleaning modes for better oral care.",
@@ -154,7 +198,10 @@ export const products = [
     price: 24.99,
     stock: 40,
     image: [
-      "https://picsum.photos/id/131/700/700",
+      {
+        id: 1,
+        path: "https://picsum.photos/id/131/700/700",
+      },
     ],
     short_description:
       "Non-slip yoga mat with extra cushioning and carrying strap for easy transport.",
@@ -167,7 +214,6 @@ export const products = [
       lazada: "https://lazada/12000001",
       jd: "https://jd/12000001",
     },
-    description:
-      "<p>Some HTML content</p>"
+    description: "<p>Some HTML content</p>",
   },
 ];

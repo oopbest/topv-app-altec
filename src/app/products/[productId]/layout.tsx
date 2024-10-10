@@ -16,14 +16,14 @@ export default function ProductDetailLayout({
 
         {/* <!-- Info --> */}
         <div className="transition-responsive rounded-lg bg-white p-4">
-          <div className="transition-responsive grid grid-cols-1 md:grid-cols-5 md:space-x-4">
+          <div className="transition-responsive grid grid-cols-1 lg:grid-cols-5 lg:space-x-4">
             <div className="col-span-2">{image}</div>
             <div className="col-span-3">{info}</div>
           </div>
 
           {/* <!-- Description --> */}
           <div className="py-5">
-            <div className="rounded-lg md:border md:p-5">{description}</div>
+            <div className="rounded-lg lg:border lg:p-5">{description}</div>
           </div>
         </div>
       </main>

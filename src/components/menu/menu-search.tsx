@@ -152,8 +152,8 @@ export default function MenuSearch({ toggleSearch, isOpenSearch }: Props) {
                               >
                                 <div className="flex space-x-2">
                                   <Image
-                                    src={product.image[0]}
-                                    alt="product"
+                                    src={product.image[0].path}
+                                    alt={product.name}
                                     className="size-12 rounded-md"
                                     width={50}
                                     height={50}

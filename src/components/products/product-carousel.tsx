@@ -1,13 +1,16 @@
 "use client";
 
-import React from "react";
 import Slider from "react-slick";
 import Image from "next/image";
-import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import "slick-carousel/slick/slick.css";
+
+type Image = {
+  id: number;
+  path: string;
+};
 
 type ArrowProps = {
   className?: string;
@@ -18,7 +21,7 @@ type ArrowProps = {
 // Custom Previous Arrow
 export const PrevArrow = ({ className, onClick }: ArrowProps) => (
   <div
-    className={`${className} absolute left-5 top-1/3 z-30 flex size-7 items-center justify-center rounded-full bg-black text-white opacity-50 hover:cursor-pointer hover:opacity-80 lg:top-[40%]`}
+    className={`${className} absolute -left-8 bottom-9 hidden size-7 items-center justify-center rounded-full bg-black text-white opacity-40 hover:cursor-pointer hover:opacity-80 md:flex`}
     onClick={onClick}
   >
     <FontAwesomeIcon icon={faAngleLeft} />
@@ -28,51 +31,86 @@ export const PrevArrow = ({ className, onClick }: ArrowProps) => (
 // Custom Next Arrow
 export const NextArrow = ({ className, onClick }: ArrowProps) => (
   <div
-    className={`${className} absolute right-5 top-1/3 z-30 flex size-7 items-center justify-center rounded-full bg-black text-white opacity-50 hover:cursor-pointer hover:opacity-80 lg:top-[40%]`}
+    className={`${className} absolute -right-8 bottom-9 hidden size-7 items-center justify-center rounded-full bg-black text-white opacity-40 hover:cursor-pointer hover:opacity-80 md:flex`}
     onClick={onClick}
   >
     <FontAwesomeIcon icon={faAngleRight} />
   </div>
 );
 
-export default function ProductCarousel({ images }: { images: string[] }) {
+const ProductCarousel = ({ images }: { images: Image[] }) => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const notFoundImage = "/images/product-not-found.jpg";
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number>(1);
+
+  // Slick settings
   const settings = {
-    dots: true,
-    infinite: images.length > 1,
+    dots: false,
+    infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 4,
     slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    customPaging: function (i: number) {
-      return (
-        <Image
-          src={images[i]}
-          alt={`dot-image-${i}`}
-          width={200}
-          height={200}
-          className="w-20 hover:cursor-pointer hover:ring-2 ring-slate-200 rounded-lg ring-offset-2"
-        />
-      );
-    },
-    dotsClass: "slick-carousel overflow-x-auto !flex space-x-3 p-3 justify-center",
+    nextArrow: <NextArrow />, // Custom Next Arrow
+    prevArrow: <PrevArrow />, // Custom Prev Arrow
+    // responsive: [
+    //   {
+    //     breakpoint: 640, // For small mobile screens
+    //     settings: {
+    //       arrows: false,
+    //       slidesToShow: 5,
+    //     },
+    //   },
+    // ],
   };
 
   return (
-    <div className="relative w-full">
-      <Slider {...settings}>
-        {images.map((imageUrl, index) => (
-          <div key={index} className="rounded-lg">
-            <Image
-              src={imageUrl}
-              alt={`product-image-${index}`}
-              width={700}
-              height={700}
-              className="rounded-lg"
-            />
-          </div>
-        ))}
-      </Slider>
+    <div className="flex flex-col gap-3">
+      {selectedImage ? (
+        <Image
+          width={600}
+          height={456}
+          src={selectedImage ? selectedImage : notFoundImage}
+          alt=""
+          className="w-full rounded-lg"
+        />
+      ) : (
+        <Image
+          width={600}
+          height={456}
+          src={images[0].path}
+          alt="product-image"
+          className="w-full rounded-lg"
+        />
+      )}
+      {/* sliders */}
+      <div className="mx-auto mt-2 max-w-xs lg:mx-auto lg:max-w-sm lg:px-6">
+        <Slider {...settings}>
+          {images.map((image) => (
+            <div
+              key={image.id}
+              className={`m-2 ${
+                selectedImageIndex === image.id
+                  ? "scale-110 rounded-lg focus:outline-none"
+                  : ""
+              }`}
+              onClick={() => {
+                setSelectedImage(image.path);
+                setSelectedImageIndex(image.id);
+              }}
+            >
+              <Image
+                src={image.path}
+                alt={`Slide image ${image.id}`}
+                width={200}
+                height={200}
+                className="center w-5/6 rounded-lg hover:cursor-pointer"
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
-}
+};
+
+export default ProductCarousel;

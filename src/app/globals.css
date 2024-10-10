@@ -66,8 +66,4 @@
     transform: rotate(180deg);
   }
 
-  /* Slick image */
-  .slick-carousel .slick-active{
-    @apply ring-2 rounded-lg ring-offset-2
-  }
 }

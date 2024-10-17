@@ -51,7 +51,7 @@ export default function HomeSimpleProduct() {
               สามารถทำสมูทตี้ได้ง่ายๆเพียงกดป่มฟังก์ชันสมูทตี้เพียงปุ่มเดียว
             </p>
             <button className="btn-primary group border-none bg-white text-primary">
-              <Link href="#" className="flex items-center">
+              <Link href="/products" className="flex items-center">
                 ดูเพิ่มเติม
                 <FontAwesomeIcon
                   icon={faAngleRight}
@@ -73,7 +73,7 @@ export default function HomeSimpleProduct() {
               สามารถล้างทำความสะอาดได้ด้วยน้ำ มีหัวแปรงมาให้ถึง 2 ชิ้น
             </p>
             <button className="btn-primary group border-none bg-primary text-white">
-              <Link href="#" className="flex items-center">
+              <Link href="/products" className="flex items-center">
                 ดูเพิ่มเติม
                 <FontAwesomeIcon
                   icon={faAngleRight}

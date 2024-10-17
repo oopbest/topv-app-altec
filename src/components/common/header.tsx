@@ -29,33 +29,32 @@ export default function Header() {
 
   return (
     <>
-      <nav className="sticky top-0 z-10 w-full shadow-lg bg-white py-4">
+      <header className="sticky top-0 z-10 w-full bg-white py-4 shadow-lg">
         <section className="transition-responsive container mx-auto flex justify-between space-x-2 px-4 xl:px-0">
           <div className="flex items-center">
+            {/* <!-- Icon hamberger --> */}
+            <button
+              id="hamburger-button"
+              className="me-2 lg:hidden"
+              onClick={toggleMenu}
+            >
+              <FontAwesomeIcon icon={faBars} />
+            </button>
 
-          {/* <!-- Icon hamberger --> */}
-          <button
-            id="hamburger-button"
-            className="me-2 lg:hidden"
-            onClick={toggleMenu}
-          >
-            <FontAwesomeIcon icon={faBars} />
-          </button>
-
-          {/* <!-- Logo  --> */}
-          <div>
-            <a href="/" title="">
-              <Image src={logo} alt="logo" />
-            </a>
-          </div>
+            {/* <!-- Logo  --> */}
+            <div>
+              <a href="/" title="">
+                <Image src={logo} alt="logo" />
+              </a>
+            </div>
           </div>
 
           {/* <!--  Links - desktop  --> */}
-          <div className="hidden lg:flex">
+          <nav className="hidden lg:flex">
             <ul className="mx-1 flex flex-1 items-center justify-evenly space-x-7 text-primary *:flex xl:space-x-12">
               <MunuList />
             </ul>
-          </div>
+          </nav>
 
           <div className="w-[75%] lg:w-auto lg:basis-1/5" onClick={toggleSearch}>
             <div
@@ -63,7 +62,6 @@ export default function Header() {
               tabIndex={0}
             >
               <span className="flex items-center justify-center px-3 text-gray-500">
-                {/* <!-- Search Icon --> */}
                 <FontAwesomeIcon icon={faSearch} />
               </span>
               <div className="w-full flex-1 border-none px-1 py-2 text-sm outline-none hover:cursor-text focus:ring-0">
@@ -76,7 +74,7 @@ export default function Header() {
         {/* Link - Sidebar Menu */}
         <MenuMobile toggleMenu={toggleMenu} isOpenMenu={isOpenMenu} />
         <MenuSearch toggleSearch={toggleSearch} isOpenSearch={isOpenSearch} />
-      </nav>
+      </header>
     </>
   );
 }

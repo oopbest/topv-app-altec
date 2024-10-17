@@ -16,7 +16,10 @@ export default function Error({
 
   return (
     <>
-      <ErrorButton reset={reset} />
+      <div className="m-5 w-full text-center bg-slate-50 py-40">
+        <h3 className="font-thin text-red-600">Error Product Detail</h3>
+        <ErrorButton reset={reset} />
+      </div>
     </>
   );
 }

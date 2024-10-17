@@ -5,8 +5,9 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { ProductDto } from "@/interface/dto/product.dto";
-import { FormatThaiBaht } from "../utils/format-currency";
+import { FormatThaiBaht } from "@/utils/format-currency";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { PRODUCT_NOT_FOUND_IMG } from "@/const/product.const";
 
 type Props = {
   toggleSearch: () => void;
@@ -19,22 +20,19 @@ export default function MenuSearch({ toggleSearch, isOpenSearch }: Props) {
   const [searchQuery, setSearchQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // const fetchProduct = async (query: string) => {
-  const fetchProduct = async () => {
-    const res = await fetch(
-      // `${process.env.NEXT_PUBLIC_API_BASE_URL}/products/api/search?query=${query}`,
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/products/api`,
-      {
-        cache: "no-store",
-      },
-    );
+  async function fetchProduct() {
+    const res = await fetch("/products/api", { cache: "no-store" }); // เรียก API route
+    if (!res.ok) {
+      throw new Error("Failed to fetch products");
+    }
     const data = await res.json();
     return data;
-  };
+  }
 
-  const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(searchQuery.toLowerCase()),
-  );
+  const filteredProducts = Array.isArray(products) ? 
+  products.filter((product) => 
+    product.name.toLowerCase().includes(searchQuery.toLowerCase())
+  ) : [];
 
   const handleCloseSearch = () => {
     setSearchQuery("");
@@ -46,7 +44,6 @@ export default function MenuSearch({ toggleSearch, isOpenSearch }: Props) {
       const fetchData = async () => {
         setLoading(true);
         try {
-          // const result = await fetchProduct(searchQuery);
           const result = await fetchProduct();
           setProducts(result);
         } catch (error) {
@@ -151,13 +148,23 @@ export default function MenuSearch({ toggleSearch, isOpenSearch }: Props) {
                                 className="flex items-center justify-between p-4"
                               >
                                 <div className="flex space-x-2">
-                                  <Image
-                                    src={product.image[0].path}
-                                    alt={product.name}
-                                    className="size-12 rounded-md"
-                                    width={50}
-                                    height={50}
-                                  />
+                                  {product.image ? (
+                                    <Image
+                                      src={product.image}
+                                      alt={product.name}
+                                      className="size-12 rounded-md"
+                                      width={50}
+                                      height={50}
+                                    />
+                                  ) : (
+                                    <Image
+                                      src={PRODUCT_NOT_FOUND_IMG}
+                                      alt={product.name}
+                                      className="size-12 rounded-md"
+                                      width={50}
+                                      height={50}
+                                    />
+                                  )}
                                   <div>
                                     <p className="line-clamp-1">
                                       {product.name}
@@ -196,7 +203,9 @@ export default function MenuSearch({ toggleSearch, isOpenSearch }: Props) {
                       </div>
                     ) : (
                       <>
-                        <small className="text-center items-center py-12 text-gray-400">ยังไม่มีรายการค้นหา</small>
+                        <small className="items-center py-12 text-center text-gray-400">
+                          ยังไม่มีรายการค้นหา
+                        </small>
                       </>
                     )}
                   </>

@@ -6,6 +6,8 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import "slick-carousel/slick/slick.css";
+import { ProductMedia } from "@/interface/dto/product-detail.dto";
+import { PRODUCT_NOT_FOUND_IMG } from "@/const/product.const";
 
 type Image = {
   id: number;
@@ -38,10 +40,9 @@ export const NextArrow = ({ className, onClick }: ArrowProps) => (
   </div>
 );
 
-const ProductCarousel = ({ images }: { images: Image[] }) => {
+const ProductCarousel = ({ images }: { images: ProductMedia[] }) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const notFoundImage = "/images/product-not-found.jpg";
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number>(1);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0);
 
   // Slick settings
   const settings = {
@@ -69,15 +70,15 @@ const ProductCarousel = ({ images }: { images: Image[] }) => {
         <Image
           width={600}
           height={456}
-          src={selectedImage ? selectedImage : notFoundImage}
-          alt=""
+          src={selectedImage ? selectedImage : PRODUCT_NOT_FOUND_IMG}
+          alt="product-image"
           className="w-full rounded-lg"
         />
       ) : (
         <Image
           width={600}
           height={456}
-          src={images[0].path}
+          src={images[0]?.media_path}
           alt="product-image"
           className="w-full rounded-lg"
         />
@@ -85,22 +86,22 @@ const ProductCarousel = ({ images }: { images: Image[] }) => {
       {/* sliders */}
       <div className="mx-auto mt-2 max-w-xs lg:mx-auto lg:max-w-sm lg:px-6">
         <Slider {...settings}>
-          {images.map((image) => (
+          {images.map((image, index) => (
             <div
-              key={image.id}
+              key={image.position}
               className={`m-2 ${
-                selectedImageIndex === image.id
+                selectedImageIndex === index
                   ? "scale-110 rounded-lg focus:outline-none"
                   : ""
               }`}
               onClick={() => {
-                setSelectedImage(image.path);
-                setSelectedImageIndex(image.id);
+                setSelectedImage(image.media_path);
+                setSelectedImageIndex(index);
               }}
             >
               <Image
-                src={image.path}
-                alt={`Slide image ${image.id}`}
+                src={image.media_path}
+                alt={`Slide image ${image.media_type}`}
                 width={200}
                 height={200}
                 className="center w-5/6 rounded-lg hover:cursor-pointer"

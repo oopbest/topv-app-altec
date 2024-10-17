@@ -47,7 +47,7 @@ export default function HomeAboutUs() {
                     มาพัฒนาต่อยอดเพื่อผลิตเป็นเครื่องใช้ไฟฟ้าในครัวเรือน
                   </p>
                   <button className="btn-primary group border-none bg-primary text-white">
-                    <Link href="#" className="flex">
+                    <Link href="/about-us" className="flex">
                       ดูเพิ่มเติม
                       <FontAwesomeIcon
                         icon={faAngleRight}

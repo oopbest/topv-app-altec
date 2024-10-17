@@ -1,22 +1,17 @@
 export interface ProductDto {
   id: number;
-  name: string;
   sku: string;
+  name: string;
   price: number;
-  stock: number;
-  image: {
-    id: number;
-    path: string;
-  }[];
-  short_description: string;
-  rating: number;
-  tags: string[];
-  category: string;
-  links: {
-    topvalue?: string;
-    shopee?: string;
-    lazada?: string;
-    jd?: string;
-  };
-  description: string;
+  special_price: number | undefined;
+  type_id: string;
+  saleable: boolean;
+  category_id: number;
+  url_key: string;
+  image: string | null;
+  reviews_count: number;
+  rating_summary: number;
+  star_rating: number;
+  position: string | number;
+  discount_rate?: number;
 }

@@ -1,17 +1,16 @@
-export default function ErrorButton({
-    reset,
-  }: {
-    reset: () => void;
-  }) {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRefresh } from "@fortawesome/free-solid-svg-icons";
+
+export default function ErrorButton({ reset }: { reset: () => void }) {
   return (
     <>
-      <div className="m-3 flex h-full items-center justify-center rounded-lg bg-slate-50">
-        <div className="my-auto">
-          <button className="btn-primary" onClick={() => reset()}>
-            Try again
-          </button>
-        </div>
-      </div>
+      <button className="btn-primary group m-3" onClick={() => reset()}>
+        Try again
+        <FontAwesomeIcon
+          icon={faRefresh}
+          className="my-auto ml-2 group-hover:rotate-90"
+        />
+      </button>
     </>
   );
 }

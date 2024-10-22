@@ -5,11 +5,11 @@ import HomeAboutUs from "@/components/homepage/home-aboutus";
 
 export default function Home() {
   return (
-    <>
+    <section className="bg-white space-y-16">
       <HomeHeadBanner />
       <HomeSimpleProduct />
       <HomeStandard />
       <HomeAboutUs />
-    </>
+    </section>
   );
 }

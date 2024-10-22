@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sukhumvit">
         <Header />
-        <main className="block space-y-16">
+        <main className="block bg-theme-container">
           {children}
         </main>
         <Footer />

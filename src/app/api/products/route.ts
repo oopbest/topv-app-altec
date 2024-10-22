@@ -61,10 +61,6 @@ export async function GET(request: Request) {
     },
   );
 
-  if (res.status === 401) {
-    console.log("Please Reset cookie");
-  }
-
   if (!res.ok) {
     return NextResponse.json(
       { message: "Error fetching products" },

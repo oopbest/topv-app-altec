@@ -4,6 +4,7 @@ import LoadingProductDetail from "./loading";
 import ProductInfo from "@/components/products/product-info";
 import ProductCarousel from "@/components/products/product-carousel";
 import ProductDescription from "@/components/products/product-description";
+import { ProductDetailDto } from "@/interface/dto/product-detail.dto";
 
 type Props = {
   params: { pkey: string };
@@ -12,21 +13,21 @@ type Props = {
 export const generateMetadata = async ({
   params,
 }: Props): Promise<Metadata> => {
-  const title = await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(`Products ${params.pkey}`);
-    }, 100);
-  });
+   const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/product-detail?pkey=${params.pkey}`
+  );
+  const product: ProductDetailDto = await res.json();
+
   return {
-    title: `${title}`,
+    title: product.name, 
   };
 };
 
 export default async function ProductDetailPage({ params }: Props) {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  // await new Promise((resolve) => setTimeout(resolve, 2000));
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/product-detail?pkey=${params.pkey}`, // ส่ง pkey ใน query string
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/product-detail?pkey=${params.pkey}`,
     {
       method: "GET",
       headers: {
@@ -35,7 +36,7 @@ export default async function ProductDetailPage({ params }: Props) {
     },
   );
 
-  const product = await res.json();
+  const product: ProductDetailDto = await res.json();
   // console.log("Data Detail:", product.description);
 
   return (

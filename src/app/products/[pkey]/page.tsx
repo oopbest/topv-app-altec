@@ -46,8 +46,8 @@ export default async function ProductDetailPage({ params }: Props) {
           {/* <!-- Info --> */}
           <div className="transition-responsive rounded-lg bg-white p-4">
             <div className="transition-responsive grid grid-cols-1 lg:grid-cols-5 lg:space-x-4">
-              <div className="col-span-2">
-                <ProductCarousel images={product.media} />
+              <div className="col-span-2 h-full">
+                <ProductCarousel media={product.media} />
               </div>
               <div className="col-span-3">
                 <ProductInfo product={product} urlKey={params.pkey} />

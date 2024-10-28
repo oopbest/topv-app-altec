@@ -43,14 +43,15 @@ export default async function ProductInfo({ urlKey, product }: Props) {
       {/* <!-- Online --> */}
       <div className="transition-responsive container mx-auto">
         <b>ตัวแทนจำหน่าย</b>
-        <div className="grid grid-cols-2 justify-center gap-2 p-3 md:grid-cols-4">
+        {/* <div className="grid grid-cols-2 justify-center gap-2 p-3 md:grid-cols-4"> */}
+        <div className="flex justify-center">
           <a
-            className="transition hover:-translate-y-1"
+            className="transition hover:-translate-y-0.5"
             href={`${process.env.NEXT_PUBLIC_TOPVALUE_URL}/${urlKey}`}
             target="_blank"
           >
             <Image
-              className="rounded-lg border bg-white"
+              className="rounded-lg border bg-white w-48"
               src={imgTopv}
               alt="shop-topvalue"
             />

@@ -8,6 +8,8 @@ import RefreshToken from "@/components/products/product-refresh";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import ProductMore from "@/components/products/product-more";
+import { PRODUCT_DEFAULT_PAGE } from "@/const/product.const";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -18,7 +20,7 @@ export default async function ProductPage() {
   const accessToken = cookies().get("ACCESS_TOKEN")?.value;
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/products`,
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/products?currentPage=${PRODUCT_DEFAULT_PAGE}`,
     {
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -36,11 +38,15 @@ export default async function ProductPage() {
   return (
     <Suspense fallback={<LoadingProductCard />}>
       {products && products.length > 0 ? (
-        <div className="container mx-auto grid grid-cols-2 gap-3 bg-theme-container p-4 md:grid-cols-3">
-          {products.map((product: ProductDto) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        <>
+          <div className="container mx-auto grid grid-cols-2 gap-3 bg-theme-container p-4 md:grid-cols-3">
+            {products.map((product: ProductDto) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+
+          <ProductMore accessToken={accessToken}/>
+          </div>
+        </>
       ) : (
         <div className="m-5 w-full bg-slate-50 py-40 text-center *:my-3">
           <h3 className="font-thin">Sorry, No Product Found.</h3>

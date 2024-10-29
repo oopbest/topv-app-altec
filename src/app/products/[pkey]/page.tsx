@@ -41,7 +41,7 @@ export default async function ProductDetailPage({ params }: Props) {
 
   return (
     <Suspense fallback={<LoadingProductDetail />}>
-      <section className="block bg-theme-container p-3">
+      <section className="block bg-theme-container md:p-3">
         <main className="container mx-auto block pb-16">
           {/* <!-- Info --> */}
           <div className="transition-responsive rounded-lg bg-white p-4">

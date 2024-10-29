@@ -21,9 +21,8 @@ export default async function ProductInfo({ urlKey, product }: Props) {
       <div className="space-y-1">
         <h4>{product.name}</h4>
         <div className="flex items-center divide-x *:px-2">
-          <div className="flex justify-center space-x-1">
+          
             <ProductRating rating={rating} />
-          </div>
           <p>{rating}</p>
           <div>
             <small className="rounded-md bg-slate-100 p-1 text-gray-500">

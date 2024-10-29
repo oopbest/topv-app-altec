@@ -20,11 +20,13 @@ export async function GET(request: Request) {
   if (!accessToken) {
     return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
   }
+  const url = new URL(request.url);
+  const currentPage = Number(url.searchParams.get("currentPage")) || PRODUCT_DEFAULT_PAGE;
 
   const brandId = String(process.env.NEXT_PUBLIC_DEFAULT_CATEGORY_ID);
   const productDisplayConfig: ProductDisplayConfig = {
     pageSize: PRODUCT_PAGE_SIZE,
-    currentPage: PRODUCT_DEFAULT_PAGE,
+    currentPage: currentPage,
     sortBy: PRODUCT_DEFAULT_SORT_BY,
     sortDirection: "ASC",
   };
@@ -37,7 +39,7 @@ export async function GET(request: Request) {
       layer: 3,
       cond: "in",
     });
-    const { pageSize, currentPage, sortBy, sortDirection } =
+    const { pageSize, sortBy, sortDirection } =
       productDisplayConfig;
     const queryPage = getPageQuery({
       pageSize: pageSize,

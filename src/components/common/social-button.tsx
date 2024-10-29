@@ -12,7 +12,7 @@ const SocialButton: React.FC<Props> = ({ styleColor }) => {
         <li key={index}>
           <a href={social.path} target="_blank">
             <button className={`btn-social shadow-md ${styleColor}`}>
-              <FontAwesomeIcon icon={social.icon} className="fa-2x"/>
+              <FontAwesomeIcon icon={social.icon} className="fa-2x size-7"/>
             </button>
           </a>
         </li>

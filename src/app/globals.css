@@ -17,7 +17,7 @@
   }
 
   svg {
-    @apply transition;
+    @apply transition size-4; 
   }
 
   .slick-dots {
@@ -30,7 +30,7 @@
     @apply transition-all duration-200 md:duration-200 lg:duration-200;
   }
   .btn-primary {
-    @apply transition-responsive rounded-full border-2 border-primary bg-primary px-3 py-2 text-sm text-white;
+    @apply transition-responsive rounded-full border-2 border-primary bg-primary px-3 py-2 text-sm text-white active:bg-primaryDark;
   }
   .btn-social {
     @apply transition-responsive size-12 rounded-full shadow-md hover:ring-4 ;

@@ -13,9 +13,9 @@ export const PRODUCT_SORT_LIST: DropdownOption[] = [
 // product random display
 export const PRODUCT_RANDOM_SORT_BY: ProductSortBy = "random";
 
-// product paging
+// product paging 
 export const PRODUCT_DEFAULT_PAGE = 1;
-export const PRODUCT_PAGE_SIZE = 16;
+export const PRODUCT_PAGE_SIZE = 9;
 
 // product images
 export const PRODUCT_NOT_FOUND_IMG = noImage;

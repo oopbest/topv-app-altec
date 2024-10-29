@@ -43,9 +43,8 @@ export default function ProductCard({ product }: Props) {
           <b>
             <FormatThaiBaht amount={product.price} />
           </b>
-          <div className="flex justify-center space-x-1">
+          <div className="flex justify-center divide-x *:px-2">
             <ProductRating rating={product.star_rating} />
-
             <p>{product.star_rating}</p>
           </div>
           <div>

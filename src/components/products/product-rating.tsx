@@ -15,7 +15,7 @@ export default function ProductRating({ rating }: Props) {
   const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
 
   return (
-    <div className="flex justify-center space-x-1 [&_svg]:text-[#ffd43b]">
+    <div className="flex justify-center space-x-1 [&_svg]:text-[#ffd43b] items-center">
       {[...Array(fullStars)].map((_, index) => (
         <FontAwesomeIcon key={index} icon={starSolid} />
       ))}

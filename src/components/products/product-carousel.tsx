@@ -70,12 +70,13 @@ const ProductCarousel = ({ media }: { media: ProductMedia[] }) => {
   // Slick settings
   const settings = {
     dots: false,
-    infinite: media.length >= 3,
+    infinite: media.length >= 6,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    focusOnSelect: media.length >= 3,
-    centerMode: media.length >= 3,
+    focusOnSelect: media.length >= 6,
+    centerMode: media.length >= 6,
+    arrows: media.length >= 6,
     nextArrow: <NextArrow />, // Custom Next Arrow
     prevArrow: <PrevArrow />, // Custom Prev Arrow
   };

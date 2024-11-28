@@ -11,22 +11,24 @@ export default function HomeSimpleProduct() {
   return (
     <>
       {/* <!-- Simple Product--> */}
-      <div className="transition-responsive container mx-auto block justify-evenly space-y-8 lg:space-y-0 px-4 md:flex md:space-x-5">
-        <div>
+      <div className="transition-responsive container mx-auto block justify-evenly px-4 md:flex md:space-x-5 lg:space-y-0">
+        <div className="space-y-4">
           <h2 className="animate-slideDown font-normal text-primary">
             ALL Living, Alright
           </h2>
-          <div className="mt-6 space-y-4">
-            <Image className="rounded-xl" src={imgLiving1} alt="showcase" />
 
-            <p className="text-lg">
-              Altec เครื่องดูดฝุ่นพกพาไร้สาย รุ่น V2 mini - รับประกัน 3 ปี
-            </p>
-            <b className="text-xl font-extrabold text-primary">฿ 1,990.-</b>
-          </div>
+          <Image className="rounded-xl" src={imgLiving1} alt="showcase" />
+
+          <p className="text-lg">
+            Altec เครื่องดูดฝุ่นพกพาไร้สาย รุ่น V2 mini - รับประกัน 3 ปี
+          </p>
+          <b className="text-xl font-extrabold text-primary">฿ 1,990.-</b>
         </div>
 
         <div className="space-y-4">
+          <h2 className="opacity-0">
+            Altec
+          </h2>
           <Image className="rounded-xl" src={imgLiving2} alt="showcase" />
 
           <p className="text-lg">

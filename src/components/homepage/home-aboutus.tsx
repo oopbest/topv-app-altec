@@ -36,7 +36,7 @@ export default function HomeAboutUs() {
               <div className="space-y-3 divide-y-2">
                 <div className="space-y-5">
                   <p>เกี่ยวกับ</p>
-                  <h4 className="text-primary">บริษัท สวิทซ เฟลคซ จำกัด</h4>
+                  <h4 className="text-primary">บริษัท อเล็กทริค จำกัด</h4>
                   <p>
                     ก่อตั้งขึ้นเมื่อปี 2005
                     โดยกลุ่มวิศวกรที่มีความเชี่ยวชาญในงานเครื่องจักรโดยเฉพาะ

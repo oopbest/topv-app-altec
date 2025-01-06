@@ -6,7 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { Metadata } from "next";
 import Image from "next/image";
-import ImgAbout from "@images/about1.png"
+import ImgAbout from "@images/about1.png";
 
 export const metadata: Metadata = {
   title: "About",
@@ -23,7 +23,7 @@ export default function AboutusPage() {
         />
         <article className="divide-y divide-black px-5 py-5">
           <div className="mb-7 space-y-4 [&_p]:indent-10 [&_p]:leading-relaxed [&_p]:md:text-justify">
-            <h4 className="text-primary">บริษัท สวิทซเฟลคซ จำกัด</h4>
+            <h4 className="text-primary">บริษัท อเล็กทริค จำกัด</h4>
             <p>
               ก่อตั้งขึ้นเมื่อปี 2005
               โดยกลุ่มวิศวกรที่มีความเชี่ยวชาญในงานเครื่องจักรโดยเฉพาะ
@@ -37,7 +37,7 @@ export default function AboutusPage() {
               และสินค้าราคาถูก แต่คุณภาพตามราคา
             </p>
             <p>
-              บริษัท สวิทซ เฟลคซ จำกัด
+              บริษัท อเล็กทริค จำกัด
               จึงได้เลือกผลิตเครื่องใช้ไฟฟ้าและสร้างแบรนด์สินค้าของตนเอง
               โดยตั้งเป้าหมายให้เป็นสินค้าที่มีคุณภาพ มีการออกแบบที่สวยงาม
               ในราคาที่ผู้คนสามารถจับต้องได้
@@ -46,7 +46,7 @@ export default function AboutusPage() {
               และช่วยยกระดับคุณภาพชีวิตของผู้ใช้งานให้สะดวกสบายมากยิ่งขึ้น
             </p>
             <p>
-              โดยในปัจจุบัน บริษัท สวิทซ เฟลคซ จำกัด
+              โดยในปัจจุบัน บริษัท อเล็กทริค จำกัด
               ได้ผลิตสินค้าในกลุ่มเครื่องใช้ไฟฟ้าออกมาวางจำหน่าย
               ภายใต้ชื่อแบรนด์ ALTEC และ Alectric โดยมีสินค้าหลากหลาย
               ให้ผู้บริโภคได้เลือกใช้งาน ไม่ว่าจะเป็นเครื่องฟอกอากาศ
@@ -56,7 +56,7 @@ export default function AboutusPage() {
               ภายใต้ชื่อแบรนด์ namiko
             </p>
             <p>
-              บริษัท สวิทซ เฟลคซ จำกัด
+              บริษัท อเล็กทริค จำกัด
               มีความมุ่งมั่นและตั้งใจที่จะสร้างสรรค์สินค้าที่มีคุณภาพ
               ในราคาที่เหมาะสม ให้ทุกคนสามารถจับต้องและใช้งานได้
               โดยตัวสินค้ามีการรับประกันสูงสุดถึง 2 ปี และมีการบริการหลังการขาย
@@ -67,13 +67,13 @@ export default function AboutusPage() {
           </div>
           <div className="pt-7">
             <div className="mb-3 w-full space-y-4 sm:w-3/6">
-              <h4 className="mb-2 text-primary">บริษัท สวิทซเฟลคซ จำกัด</h4>
+              <h4 className="mb-2 text-primary">บริษัท อเล็กทริค จำกัด</h4>
               <b className="text-primary">สำนักงานใหญ่</b>
               <ul className="*:mb-4 [&_i]:text-primary [&_li]:flex [&_li]:items-start [&_li]:space-x-2 [&_svg]:mt-1">
                 <li>
                   <FontAwesomeIcon icon={faLocationDot} />
                   <p>
-                    บริษัท สวิทซเฟลคซ จำกัด <br />
+                    บริษัท อเล็กทริค จำกัด <br />
                     เลขที่ 30/119 หมู่ 1 ต.โคกขาม <br />
                     อ.เมือง จ.สมุทรสาคร 74000
                   </p>

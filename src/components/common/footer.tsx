@@ -44,7 +44,7 @@ export default function Footer() {
               <div className="p-3 md:p-0">
                 <p>
                   <FontAwesomeIcon icon={faLocationDot} />
-                  บริษัท สวิทซเฟลคซ จำกัด เลขที่ 30/119 หมู่ 1 ต.โคกขาม อ.เมือง
+                  บริษัท อเล็กทริค จำกัดเลขที่ 30/119 หมู่ 1 ต.โคกขาม อ.เมือง
                   จ.สมุทรสาคร 74000
                 </p>
                 <div className="pt-6">

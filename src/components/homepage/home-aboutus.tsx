@@ -5,7 +5,7 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import imgLogo from "@images/logo.svg";
 import imgSwitchflex from "@images/switchflex-new-670x440.jpg";
-import imgLogoSwf from "@images/logo-switchflex.svg";
+import imgLogoSwf from "@images/alectric-2024.png";
 
 export default function HomeAboutUs() {
   return (
@@ -63,7 +63,7 @@ export default function HomeAboutUs() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Image src={imgLogoSwf} alt="switchflex" />
+                    <Image src={imgLogoSwf} alt="switchflex" className="w-20 border shadow rounded-lg hover:border-primary"/>
                   </a>
                 </div>
               </div>

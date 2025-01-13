@@ -76,7 +76,7 @@ export default function Footer() {
             >
               <p className="p-3 md:p-0">
                 สนใจสั่งซื้อสินค้าเป็นจำนวนมาก หรือสมัครเป็นตัวแทนจำหน่ายได้ที่
-                โทร. 1277 E-mail: Service@switchflex.com
+                โทร. 1277 E-mail: sales@alectric.asia
               </p>
             </div>
           </div>

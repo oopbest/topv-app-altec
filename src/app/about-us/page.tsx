@@ -6,7 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { Metadata } from "next";
 import Image from "next/image";
-import ImgAbout from "@images/about1.png";
+import ImgAbout from "@images/Web-Brand-4.png";
 
 export const metadata: Metadata = {
   title: "About",
